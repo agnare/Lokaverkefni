@@ -13,7 +13,7 @@ return [
 	|
 	*/
 
-	'debug' => env('APP_DEBUG'),
+	'debug' => env('APP_DEBUG', false),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -26,7 +26,7 @@ return [
 	|
 	*/
 
-	'url' => env('APP_URL', 'http://localhost'),
+	'url' => 'http://localhost',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -74,11 +74,11 @@ return [
 	|
 	| This key is used by the Illuminate encrypter service and should be set
 	| to a random, 32 character string, otherwise these encrypted strings
-	| will not be safe.
+	| will not be safe. Please do this before deploying an application!
 	|
 	*/
 
-	'key' => env('APP_KEY', 'eaAJlaAlABGDmSOIOoBKZBuwZnGdjYMn'),
+	'key' => env('APP_KEY', 'SomeRandomString'),
 
 	'cipher' => MCRYPT_RIJNDAEL_128,
 
@@ -136,6 +136,16 @@ return [
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 
+		'Illuminate\Html\HtmlServiceProvider',
+
+		/*
+		 * 3rd Party Service Providers...
+		 */
+		'yajra\Datatables\DatatablesServiceProvider',
+		'Laracasts\Generators\GeneratorsServiceProvider',
+		'Laracasts\Flash\FlashServiceProvider',
+		'Barryvdh\Debugbar\ServiceProvider',
+
 		/*
 		 * Application Service Providers...
 		 */
@@ -192,6 +202,16 @@ return [
 		'URL'       => 'Illuminate\Support\Facades\URL',
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
+
+		'Form'      => 'Illuminate\Html\FormFacade',
+		'HTML'      => 'Illuminate\Html\HtmlFacade',
+
+		/*
+		 * 3rd Party Aliases...
+		 */
+		'Datatables'  => 'yajra\Datatables\Datatables',
+		'Flash' => 'laracasts/Flash/Flash',
+		'Debugbar' => 'Barryvdh\Debugbar\Facade',
 
 	],
 

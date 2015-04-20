@@ -13,12 +13,9 @@ return [
 	|
 	| Supported: "smtp", "mail", "sendmail", "mailgun", "mandrill", "log"
 	|
-	| OpenShift Recommended:
-	|   SendGrid: https://developers.openshift.com/en/marketplace-sendgrid.html#php-laravel
-	|
 	*/
 
-	'driver' => env('MAIL_DRIVER', 'smtp'),
+	'driver' => 'smtp',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -31,7 +28,7 @@ return [
 	|
 	*/
 
-	'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
+	'host' => 'smtp.mailgun.org',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -44,7 +41,7 @@ return [
 	|
 	*/
 
-	'port' => env('MAIL_PORT', 587),
+	'port' => 587,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -57,7 +54,7 @@ return [
 	|
 	*/
 
-	'from' => ['address' => null, 'name' => null],
+	'from' => ['blastereco@gmail.com' => null, 'eco' => null],
 
 	/*
 	|--------------------------------------------------------------------------
@@ -83,7 +80,7 @@ return [
 	|
 	*/
 
-	'username' => env('MAIL_USERNAME'),
+	'username' => null,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -96,7 +93,7 @@ return [
 	|
 	*/
 
-	'password' => env('MAIL_PASSWORD'),
+	'password' => null,
 
 	/*
 	|--------------------------------------------------------------------------
